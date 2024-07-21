@@ -1,4 +1,4 @@
-package com.oforsyth.lhl.team;
+package com.oforsyth.lhl.manager;
 
 import java.util.List;
 
@@ -15,40 +15,35 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/teams")
-public class TeamController {
-
+@RequestMapping("/managers")
+public class ManagerController {
+    
     @Autowired
-    private TeamService teamService;
+    private ManagerService managerService;
 
-    @PostMapping // Mapping the post request
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Team createTeam(@RequestBody Team team) {
-        return teamService.createTeam(team);
+    public Manager createManager(@RequestBody Manager manager) {
+        return managerService.createManager(manager);
     }
 
-    @GetMapping // No input, just fetch from the DB
-     public List<Team> getTeams() {
-        return teamService.getAllTeams();
+    @GetMapping
+    public List<Manager> getManagers() {
+        return managerService.getAllManagers();
     }
 
     @GetMapping("/{id}")
-    public Team getTeamById(@PathVariable String id) {
-        return teamService.getTeamById(id).orElse(null);
-    }
-    
-    @GetMapping("/name/{name}")
-    public Team getTeamByName(@PathVariable String name) {
-        return teamService.getTeamByName(name);
+    public Manager getManagerById(@PathVariable String id) {
+        return managerService.getManagerById(id);
     }
 
     @PutMapping
-    public Team modifyTeam(@RequestBody Team team) {
-        return teamService.updateTeam(team);
+    public Manager modifyManager(@RequestBody Manager manager) {
+        return managerService.updateManager(manager);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteTeam(@PathVariable String id) {
-        return teamService.deleteTeam(id);
+    public String deleteManager(@PathVariable String id) {
+        return managerService.deleteManager(id);
     }
 }
