@@ -1,0 +1,6 @@
+spring: 
+    data:
+        mongodb:
+            uri: mongodb+srv://maverickxm2:i6Qvi175dRdJwcyk@lhl-cluster.b3yvrao.mongodb.net/?retryWrites=true&w=majority&appName=lhl-cluster
+            database : lhl
+            
