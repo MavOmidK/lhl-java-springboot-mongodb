@@ -1,4 +1,6 @@
-package com.oforsyth.lhl.model;
+package com.oforsyth.lhl.team;
+
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -15,10 +17,8 @@ public class Team {
     @Id
     private String id;
     private String name;
-    // private Date createdDate;
-    // private String managerId;
-    private Boolean active; // If the team is currently active
+    private String managerId;
+    private Date createdDate;
     private String[] activeRoster;
     private String[] prospectRoster; 
-    
 }

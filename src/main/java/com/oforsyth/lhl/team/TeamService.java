@@ -1,4 +1,4 @@
-package com.oforsyth.lhl.service;
+package com.oforsyth.lhl.team;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +6,6 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.oforsyth.lhl.model.Team;
-import com.oforsyth.lhl.repository.TeamRepository;
 
 @Service
 public class TeamService {
