@@ -9,7 +9,6 @@ import com.oforsyth.lhl.player.model.PlayerStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 @Document(collection = "players")
 @Data
@@ -20,8 +19,9 @@ public class Player {
 
     @Id
     private String id;
-    @NonNull
     private String nhlId;
+    private String nhlTeam;
+    private String jerseyNumber;
     private String teamId;
     private String firstName;
     private String lastName;
