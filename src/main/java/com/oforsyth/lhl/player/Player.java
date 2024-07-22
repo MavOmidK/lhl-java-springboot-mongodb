@@ -3,14 +3,13 @@ package com.oforsyth.lhl.player;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.oforsyth.lhl.player.model.PlayerStatus;
 import com.oforsyth.lhl.player.model.PlayerPosition;
+import com.oforsyth.lhl.player.model.PlayerStatus;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-
+import lombok.NonNull;
 
 @Document(collection = "players")
 @Data
@@ -21,6 +20,8 @@ public class Player {
 
     @Id
     private String id;
+    @NonNull
+    private String nhlId;
     private String teamId;
     private String firstName;
     private String lastName;
